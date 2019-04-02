@@ -33,6 +33,9 @@ section {
     margin: 0 10px;
 }
 
+.center-content > .description  {
+    font-weight: 500;
+}
 .vote-count {
     display: flex;
     flex-direction: column;
