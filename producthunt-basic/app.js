@@ -42,37 +42,6 @@ let products = [
     }
 ];
 
-// creating a vue component
-const productComponent = {
-    template: `
-    <div>
-    <section  v-bind:class="{'top-votes': product.votes > 20}"
-        <div class="avatar">
-            <img v-bind:src="product.avatar" alt="avatar">
-            <a v-bind:href="product.url">#</a>
-        </div>
-        <div class="center-content">
-            <h4 class="title">{{product.title}}</h4>
-            <p class="description">{{product.description}}</p>
-            <small class="submitted-by">{{product.submittedBy}}</small>
-        </div>
-        <div class="vote-count">
-            <i class="fa fa-chevron-up" v-on:click="upvote(product.id)"></i>
-            <strong class="has-text-info">{{product.votes}}</strong>
-        </div>
-    </section>
-    </div>
-    `,
-    methods: {
-        upvote(id) {
-            const product = this.sortedProducts.find((product) => {
-                return product.id == id;
-            });
-            product.votes++;
-        }
-    },
-    props: ['sortedProducts', 'product']
-}
 
 new Vue({
     el: '#app',
@@ -86,8 +55,12 @@ new Vue({
             })
         }
     },
-    components: {
-        //  registering the vue components
-        'product-component': productComponent
+    methods: {
+        upvote(id) {
+            const product = this.sortedProducts.find((product) => {
+                return product.id == id;
+            });
+            product.votes++;
+        }
     },
 })

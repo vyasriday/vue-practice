@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,29 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app">
         <h2>ProductHunt Clone</h2>
-        <div class="wrapper">
-            <product-component
-                v-for="product in sortedProducts"
-                v-bind:key="product.id"
-            ></product-component>
-        </div>
+        <section v-for="product in sortedProducts" v-bind:class="{'top-votes': product.votes > 20}" >
+            <div class="avatar">
+                <img v-bind:src="product.avatar" alt="avatar">
+                <a v-bind:href="product.url">#</a>
+            </div>
+            <div class="center-content">
+                <h4 class="title">{{product.title}}</h4>
+                <p class="description">{{product.description}}</p>
+                <small class="submitted-by">{{product.submittedBy}}</small>
+            </div>
+            <div class="vote-count">
+                <i class="fa fa-chevron-up" v-on:click="upvote(product.id)"></i>
+                <strong class="has-text-info">{{product.votes}}</strong>
+            </div>
+        </section>
+
     </div>
-    <script src="https://unpkg.com/vue"></script>  
-    <script src="app.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
