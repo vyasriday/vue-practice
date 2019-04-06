@@ -1,0 +1,41 @@
+#vue-app {
+   box-shadow: 1px 3px 9px whitesmoke; 
+   width: 600px;
+   margin: 0 auto;
+   height: auto;
+}
+
+h3 {
+    font-family: Lato;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 4px 0;
+}
+
+li, input {
+    margin: 5px;
+    font-size: 16px;
+}
+
+input {
+    box-shadow: 2px 4px 8px lightgrey;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.774);
+
+}
+
+span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button {
+    background: skyblue;
+    padding: 2px 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 14px;
+}
+

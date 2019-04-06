@@ -47,6 +47,9 @@ section {
     cursor: pointer;
 }
 
+.top-votes {
+    border: 1px solid steelblue;
+}
 @media(min-width: 600px) {
     section {
         justify-content: center;
